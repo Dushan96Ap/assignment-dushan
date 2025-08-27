@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "990b7d25-da59-41e1-84df-9d07c574f4ea",
+		"name": "ASE Login & Registration API",
+		"description": "Requests for register, login, and profile.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15556443"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"FullName\": \"Dushan Samarawickrama\",\n  \"Email\": \"dushan@example.com\",\n  \"Password\": \"Passw0rd123\",\n  \"PhoneNumber\": \"0771234567\",\n  \"DateOfBirth\": \"1990-01-01\",\n  \"Role\": \"User\"\n}"
+				},
+				"url": "{{baseUrl}}/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Email\": \"dushan@example.com\",\n  \"Password\": \"Passw0rd123\"\n}"
+				},
+				"url": "{{baseUrl}}/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Me (profile)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "{{baseUrl}}/api/auth/me"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:4000"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
