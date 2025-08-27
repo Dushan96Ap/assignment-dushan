@@ -1,4 +1,3 @@
-Here’s a **short, drop-in `README.md`** you can use on GitHub:
 
 ---
 
